@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Constants from 'expo-constants';
+
+import Exemplo01 from './src/exemplos/exemplo-01';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>vai brasil</Text>
+      <Exemplo01/>
       <StatusBar style="auto" />
     </View>
   );
@@ -15,9 +18,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'darksalmon',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    padding: 8,
     marginTop: Constants.statusBarHeight,
   },
 });
