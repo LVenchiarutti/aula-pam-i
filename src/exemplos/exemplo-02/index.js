@@ -5,12 +5,21 @@ import styles from "./styles";
 import img from '../../../assets/002-1-react-native.png';
 import Mensagens from "./mensagens";
 
-function Exemplo02() {
+function Exemplo02(props) {
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Exemplo 02</Text>
       <Image source={img} style={styles.imagem} />
-      <Mensagens />
+      
+      <Mensagens titulo={'sucesso'} >
+      valor enviado corretamente!
+      </Mensagens>
+      <Mensagens titulo={'erro'}>
+        Vc nao pde fazer isso 
+      </Mensagens>
+      <Mensagens titulo={'aviso'}>
+      valor não informado!
+      </Mensagens>
     </View>
   );
 }
