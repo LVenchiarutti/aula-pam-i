@@ -17,17 +17,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,  //margem acima do elemento
     //padding: 8,   //espaçamento interno
     width: '100%',  //altura do elemento
-    height:80,   //largura do elemento
-    textAlign: 'center',  //alinhamento de texto
-    textAlignVertical: 'center', //alinhamento vertical
-    color: 'black', //cor do texto
-    backgroundColor: 'darkslategrey', //cor de fundo
-    borderRadius: 20,  //bordas arredondadas
+    height:80, //largura do elemento   
+    textAlign: 'center',  //  alinhamento horizontal
+    textAlignVertical: 'center', // alinhamento vertical
+    color: 'black',// cor do texto
+    backgroundColor: 'darkslategrey', // cor de fundo
+    borderRadius: 20,  //   bordas arredondadas
   },
-  texto:{
-    fontSize: RFPercentage(2.2), //tamanho da fonte
-    
-  }
+  imagem: {
+   // height: RFPercentage(16), //altura da imagem
+   // width: RFPercentage(48), //largura da imagem
+   width:'90%', //largura da imagem
+   resizeMode: 'contain', //redimensionamento
+  },
+
 });
 
 export default styles;
