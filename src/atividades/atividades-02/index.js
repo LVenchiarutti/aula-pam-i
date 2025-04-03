@@ -3,28 +3,28 @@ import { View, Text } from "react-native";
 import styles from "./styles";
 import Card from "./card";
 
-import theLastImg from '../../../assets/thelast.png';
-import re5Img from '../../../assets/re5.jpg';
-import redImg from '../../../assets/red.png';
+import cb3 from '../../../assets/cb3.png';
+import cb5 from '../../../assets/cb5.jpg';
+import cb10 from '../../../assets/cb10.png';
 
 function Atividade02() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo2}>Atividade 02</Text>
+      <Text style={styles.titulo2}>Honda motor Company</Text>
       <Card 
         titulo2="Honda cb 300f" 
-        descricao="Um jogo emocionante sobre sobrevivência e laços humanos. R$100,00" 
-        img={theLastImg} 
+        descricao="Dia a dia e aventura com economia. R$30.000,00" 
+        img={cb3} 
       />
       <Card 
-        titulo2="Resident Evil 5" 
-        descricao="Ação e terror em uma jornada contra o bioterrorismo. R$70,00" 
-        img={re5Img} 
+        titulo2="Cb 500" 
+        descricao="Conforto e potencia para quem busca aventura. R$50.000,00" 
+        img={cb5} 
       />
       <Card 
-        titulo2="Red Dead Redemption" 
-        descricao="Um épico do velho oeste com ação e uma história inesquecível. R$150,00" 
-        img={redImg} 
+        titulo2="Cb 1000" 
+        descricao="Para quem almeja a adrenalina e a velocidade. R$90.000,00" 
+        img={cb10} 
       />
     </View>
   );
