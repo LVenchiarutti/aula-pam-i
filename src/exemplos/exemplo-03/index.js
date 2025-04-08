@@ -1,12 +1,17 @@
-import { View, Text, Button, Alert } from "react-native";
+import {useState } from "react";
+import { View, Text, Button, Alert, TouchableOpacity } from "react-native";
 
 import styles from "./styles";
+
 function Exemplo03() {
 
-    function handleExibeBotao() {
-        Alert.alert("Clicou!");
-    }
-    const handleExibeBotao2 = () => {
+  const [numero,setNumero] = useState(0);
+  
+  function handleIncremento() {
+    setNumero(numero + 1);
+  }
+
+  const handleExibeBotao2 = () => {
         Alert.alert ('Clicou dnv!',
         'alguem clicou',
         [
@@ -26,21 +31,23 @@ function Exemplo03() {
             styles: 'default',
           },
         ]
-    )}
+    );
+  }
     
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Exemplo 03</Text>
+      <Text style={styles.titulo}>Atividade 03</Text>
       <Text style={styles.texto}>Variaveis e State</Text>
         <Button
           title="Não clique aqui"
           onPress={handleExibeBotao2}
           color="red"
         />
-
-    
-    </View>    
-
+        <Text style={styles.valor}>{numero}</Text>
+        <TouchableOpacity style={styles.botao} onPress={handleIncremento}> 
+          <Text style={styles.txtBotao}>+1</Text>
+        </TouchableOpacity>
+    </View>
   );
 }
 

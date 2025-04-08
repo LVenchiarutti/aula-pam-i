@@ -27,8 +27,25 @@ const styles = StyleSheet.create({
   texto:{
     fontSize: RFPercentage(2.2), //tamanho da fonte
     
-  }
-    
+  },
+  valor: {
+    fontSize: RFPercentage(5), //tamanho da fonte
+    color: 'black', //cor do texto
+  },
+  botao: {
+    backgroundColor: 'darkslategrey', //cor de fundo
+    width: '75%', //altura do elemento
+    borderRadius : RFPercentage(2), //bordas arredondadas
+    padding: RFPercentage(1.5), //espaçamento interno
+    alignItems: 'center', //alinhamento horizontal
+    justifyContent: 'center', //alinhamento vertical
+    margin: RFPercentage(2), // margem acima do elemento
+
+  },
+    txtBotao: {
+    fontSize: RFPercentage(2), //tamanho da fonte
+    color: 'black', //cor do texto
+    },
 });
 
 export default styles;
