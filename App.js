@@ -7,17 +7,20 @@ import Constants from 'expo-constants';
 // import Exemplo02 from './src/exemplos/exemplo-02';
 //import Exemplo03 from './src/exemplos/exemplo-03';
 // import Exemplo04 from './src/exemplos/exemplo-04';
+//import Exemplo05 from './src/exemplos/exemplo-05';
 
 
 //import Atividade02 from './src/atividades/atividades-02';
 //import Atividade03 from './src/atividades/atividades-03';
-import Atividade04 from './src/atividades/atividades-04';
+//import Atividade04 from './src/atividades/atividades-04';
+import Atividade05 from './src/atividades/atividades-05';
+
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Atividade04 />
+      <Atividade05 />
       <StatusBar style="auto" />
     </View>
   );
