@@ -1,95 +1,51 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native'; 
+
+import Input from './input'; 
+import Botao from './botao';
+
 import styles from './styles';
 
-function Calculadora() {
-  const [num1, setNum1] = useState('');
-  const [num2, setNum2] = useState('');
-  const [total, setTotal] = useState('');
+export default function Atividade5() {
 
-  const handleCalculation = (operacao) => {
-    const n1 = parseFloat(num1);
-    const n2 = parseFloat(num2);
-    let resultado = 0;
+    const [n1, setN1] = useState(0);
+    const [n2, setN2] = useState(0);
+    const [total, setTotal] = useState(0);
 
-    if (isNaN(n1) || isNaN(n2)) {
-      setTotal('Erro');
-      return;
+    function handleZerar() {
+        setN1(0);
+        setN2(0);
+        setTotal(0);
     }
 
-    switch (operacao) {
-      case '+':
-        resultado = n1 + n2;
-        break;
-      case '-':
-        resultado = n1 - n2;
-        break;
-      case '*':
-        resultado = n1 * n2;
-        break;
-      case '/':
-        resultado = n2 !== 0 ? n1 / n2 : 'Erro';
-        break;
-      default:
-        resultado = 'Erro';
-    }
+    return (
+        <View style={styles.container}>
+            <Text style={styles.titulo}> Exemplo 5 </Text>
 
-    setTotal(resultado.toString());
-  };
+            <Text style={styles.txtSaida}> Calculadora básica </Text>
 
-  const handleReset = () => {
-    setNum1('');
-    setNum2('');
-    setTotal('');
-  };
+            <Text style={styles.textLabel}> 1º número </Text>
+            <Input onChangeText={setN1} value={n1} />
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>Calculadora Completa</Text>
+            <Text style={styles.txtSaida}> + </Text>
 
-      <Text style={styles.textLabel}>1º número</Text>
-      <TextInput
-        style={styles.txtEntrada}
-        value={num1}
-        onChangeText={setNum1}
-        keyboardType="numeric"
-      />
+            <Text style={styles.textLabel}> 2º número </Text>
+            <Input onChangeText={setN2} value={n2} />
 
-      <Text style={styles.textLabel}>2º número</Text>
-      <TextInput
-        style={styles.txtEntrada}
-        value={num2}
-        onChangeText={setNum2}
-        keyboardType="numeric"
-      />
+            <Text style={[styles.txtSaida, { margin: 0 }]}> = </Text>
 
-      <Text style={styles.textLabel}>Total</Text>
-      <TextInput
-        style={styles.txtEntrada}
-        value={total}
-        editable={false}
-      />
+            <Text style={styles.textLabel}> Total </Text>
+            <Input value={parseFloat(total).toFixed(2)} total />
 
-      <View style={styles.buttonGroup}>
-        <TouchableOpacity style={styles.button} onPress={() => handleCalculation('+')}>
-          <Text style={styles.textButton}>+</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => handleCalculation('-')}>
-          <Text style={styles.textButton}>-</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => handleCalculation('*')}>
-          <Text style={styles.textButton}>*</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => handleCalculation('/')}>
-          <Text style={styles.textButton}>/</Text>
-        </TouchableOpacity>
-      </View>
+            <View style={styles.ladoAlado}>
+                <Botao n1={n1} n2={n2} atualizaTotal={setTotal}>+</Botao>        
+                <Botao n1={n1} n2={n2} atualizaTotal={setTotal}>-</Botao>        
+                <Botao n1={n1} n2={n2} atualizaTotal={setTotal}>*</Botao>        
+                <Botao n1={n1} n2={n2} atualizaTotal={setTotal}>/</Botao>        
+            </View>   
 
-      <TouchableOpacity style={styles.resetButton} onPress={handleReset}>
-        <Text style={styles.textButton}>Zerar</Text>
-      </TouchableOpacity>
-    </View>
-  );
+            <Botao onPress={handleZerar}>Zerar</Botao>         
+
+        </View>
+    );
 }
-
-export default Calculadora;
