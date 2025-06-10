@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 
@@ -23,8 +24,6 @@ import Rotas from './src/navegacao/routes';
 
 export default function App() {
   return (
-    // 2. Remova a View e renderize apenas o componente de Rotas
-    // O NavigationContainer dentro de Rotas já cuida do layout principal.
     <Rotas />
   );
 }

@@ -1,34 +1,36 @@
 // src/navegacao/routes/index.js
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-// Importando as telas que criamos
+// Importando as telas
 import Home from '../screens/Home';
 import Perfil from '../screens/Perfil';
+import Condominio from '../screens/Condominio'; // 1. Importe a nova tela
 
-// createNativeStackNavigator cria um objeto para a navegação em pilha
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function Rotas() {
   return (
-    // NavigationContainer é o componente que envolve toda a navegação
     <NavigationContainer>
-      {/* Stack.Navigator gerencia as telas da pilha */}
-      <Stack.Navigator initialRouteName="Home">
-        
-        {/* Cada Stack.Screen representa uma tela na pilha */}
-        <Stack.Screen
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen
           name="Home"
           component={Home}
-          options={{ title: 'Tela Inicial' }} // Título que aparecerá no cabeçalho
+          options={{ title: 'Tela Inicial' }} 
         />
-        <Stack.Screen
+        <Drawer.Screen
           name="Perfil"
           component={Perfil}
           options={{ title: 'Meu Perfil' }}
         />
-      </Stack.Navigator>
+        {/* 2. Adicione a tela Condomínio ao navegador */}
+        <Drawer.Screen
+          name="Condominio"
+          component={Condominio}
+          options={{ title: 'Meu Condomínio' }}
+        />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

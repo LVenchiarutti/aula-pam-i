@@ -1,21 +1,22 @@
 // src/navegacao/screens/Perfil/index.js
 
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 
-export default function Perfil({ navigation }) {
+export default function Perfil() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Tela de Perfil</Text>
-      <Text style={styles.texto}>Aqui estão as informações do perfil.</Text>
-
-      {/* Botão para voltar para a tela Home */}
-      <TouchableOpacity
-        style={styles.botao}
-        onPress={() => navigation.navigate('Home')}
-      >
-        <Text style={styles.textoBotao}>Voltar para Home</Text>
-      </TouchableOpacity>
+      <Text style={styles.titulo}>Leonardo V. G. Henrique</Text>
+      
+      <View style={styles.infoContainer}>
+        <Text style={styles.infoLabel}>Idade:</Text>
+        <Text style={styles.infoValor}>26</Text>
+      </View>
+      
+      <View style={styles.infoContainer}>
+        <Text style={styles.infoLabel}>Cidade:</Text>
+        <Text style={styles.infoValor}>Tupã</Text>
+      </View>
     </View>
   );
 }

@@ -5,31 +5,34 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff3e0',
+    paddingTop: 40,
+    backgroundColor: '#f5f5f5',
   },
   titulo: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: 'bold',
-    marginBottom: 20,
-    color: '#ef6c00',
-  },
-  texto: {
-    fontSize: 18,
+    color: '#333',
     marginBottom: 30,
-    color: '#e65100',
+    textAlign: 'center',
+    paddingHorizontal: 20,
   },
-  botao: {
-    backgroundColor: '#ef6c00',
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
+  infoContainer: {
+    flexDirection: 'row',
+    width: '80%',
+    justifyContent: 'space-between',
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
   },
-  textoBotao: {
-    color: '#ffffff',
-    fontSize: 16,
+  infoLabel: {
+    fontSize: 18,
+    color: '#666',
     fontWeight: 'bold',
+  },
+  infoValor: {
+    fontSize: 18,
+    color: '#333',
   },
 });
 
